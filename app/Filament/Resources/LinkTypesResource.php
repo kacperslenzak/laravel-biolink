@@ -28,6 +28,7 @@ class LinkTypesResource extends Resource
             ->schema([
                 TextInput::make('link_label')->required()->afterStateUpdated(fn ($state, callable $set) => $set('link_name', strtolower(str_replace(" ", "-", $state)))),
                 TextInput::make('link_url')->required(),
+                TextInput::make('icon_class')->required(),
                 Hidden::make('link_name'),
             ]);
     }

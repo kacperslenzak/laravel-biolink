@@ -4,6 +4,12 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+//fontawesome
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/brands.css';
+
 div.primary-button {
     a {
         background: linear-gradient(90deg, #8833c044, #8833c01a);
@@ -108,5 +114,35 @@ section.info {
     p {
         text-align: left;
         color: #c3a4d8 !important;
+    }
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile {
+        background-color: #1b1b1b80;
+        padding: 45px 15px;
+        min-width: 600px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        border-radius: 20px;
+
+        h1 {
+            font-weight: 600;
+            font-size: 39.5px;
+            text-shadow: 0 0 16.5px #fff;
+            color: #fff;
+        }
+
+        i {
+            font-size: 35px;
+            text-shadow: 0 0 16.5px #fff;
+        }
     }
 }

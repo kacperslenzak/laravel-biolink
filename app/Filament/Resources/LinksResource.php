@@ -28,8 +28,23 @@ class LinksResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('link_url')->label('Website Username')->required(),
-                Select::make('link_type')->options(LinkType::all()->pluck('link_label', 'link_name'))->required(),
+                TextInput::make('link_url')
+                    ->label('Website Username')
+                    ->required()
+                    ->startsWith(function (Forms\Get $get){
+                        return [LinkType::all()->where('link_name', $get('link_type') )->first()->link_url];
+                    }),
+                Select::make('link_type')->options(LinkType::all()->pluck('link_label', 'link_name'))->required()
+                ->debounce(100)
+                ->afterStateUpdated(function (Forms\Get $get, Forms\Set $set) {
+                    $link_type = $get('link_type');
+                    if ($link_type) {
+                        $link = LinkType::all()->where('link_name', $link_type )->first()->link_url;
+                        $set('link_url', $link);
+                    } else {
+                        $set('link_url', '');
+                    }
+                }),
                 Hidden::make('user_id')->default(auth()->user()->id)
             ]);
     }
