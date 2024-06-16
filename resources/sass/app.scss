@@ -144,5 +144,15 @@ section.info {
             font-size: 35px;
             text-shadow: 0 0 16.5px #fff;
         }
+
+        .icons {
+            a{
+                text-decoration: none;
+
+                &:not(:last-of-type) {
+                    margin-right: 10px;
+                }
+            }
+        }
     }
 }
