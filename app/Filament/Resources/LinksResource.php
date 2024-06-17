@@ -83,6 +83,7 @@ class LinksResource extends Resource
     {
         return [
             'index' => Pages\ListLinks::route('/'),
+            //'index' => Pages\Links::route('/'),
             'create' => Pages\CreateLinks::route('/create'),
             'edit' => Pages\EditLinks::route('/{record}/edit'),
         ];

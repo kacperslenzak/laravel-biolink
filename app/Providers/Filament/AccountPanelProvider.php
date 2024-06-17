@@ -32,7 +32,7 @@ class AccountPanelProvider extends PanelProvider
             ->login(Login::class)
             ->registration(Register::class)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#DA66DAFF',
             ])
             ->defaultThemeMode(ThemeMode::Dark)
             ->brandName('fraud.cool')
