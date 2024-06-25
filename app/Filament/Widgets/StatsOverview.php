@@ -14,6 +14,7 @@ class StatsOverview extends BaseWidget
             Stat::make('Username', auth()->user()->name),
             Stat::make('UID', auth()->user()->id),
             Stat::make('Active Links', count(Links::all()->where('user_id', auth()->user()->id))),
+            Stat::make('Profile URL', 'fraud.cool/' . auth()->user()->name),
         ];
     }
 }
