@@ -12,9 +12,10 @@ class Register extends BaseRegister
     protected function getNameFormComponent(): Component
     {
         return TextInput::make('name')
-            ->label(__('username'))
+            ->label(__('Username'))
             ->required()
-            ->maxLength(255)
+            ->minLength(2)
+            ->maxLength(16)
             ->autofocus();
     }
 
