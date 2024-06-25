@@ -19,4 +19,9 @@ class Links extends Model
     {
         return LinkType::all()->where('link_name', $this->link_type)->first()->icon_class;
     }
+
+    public function link_type(): BelongsTo
+    {
+        return $this->belongsTo(LinkType::class);
+    }
 }
