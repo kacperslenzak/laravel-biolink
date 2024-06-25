@@ -12,6 +12,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
+use Filament\Notifications\Notification;
 use Livewire\Component;
 
 class ProfileSettings extends Component implements HasForms
@@ -65,6 +66,11 @@ class ProfileSettings extends Component implements HasForms
     public function create(): void
     {
         \App\Models\ProfileSettings::updateOrCreate(['user_id' => auth()->user()->id], $this->form->getState());
+
+        Notification::make()
+            ->title('Saved successfully')
+            ->success()
+            ->send();
     }
 
     public function render(Set $set)
