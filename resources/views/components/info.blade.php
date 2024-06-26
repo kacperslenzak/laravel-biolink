@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="text-white fw-bold">Over 20,000 people use fraud.cool — What are you waiting for?</h2>
+                <h2 class="text-white fw-bold">Over 2,000 people use fraud.cool — What are you waiting for?</h2>
                 <p class="fs-5">The statistics speak for themselves! Get started now and enhance your online presence.</p>
 
                 <div class="d-flex justify-content-center">
