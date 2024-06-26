@@ -16,7 +16,8 @@ class Register extends BaseRegister
             ->required()
             ->minLength(2)
             ->maxLength(16)
-            ->autofocus();
+            ->autofocus()
+            ->unique($this->getUserModel());
     }
 
 }
