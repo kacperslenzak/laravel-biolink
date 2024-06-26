@@ -24,7 +24,7 @@ class UserController extends Controller
 
         $links = Links::all()->where('user_id', $user->id);
         $profile_settings = ProfileSettings::all()->where('user_id', $user->id)->first();
-        $profile_views = count(ProfileView::where('user_id', $user->id));
+        $profile_views = count(ProfileView::where('user_id', $user->id)->get());
 
         return view('user.profile', [
             'user' => $user,
