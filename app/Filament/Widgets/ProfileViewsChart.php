@@ -25,11 +25,12 @@ class ProfileViewsChart extends ChartWidget
             )
             ->perHour()
             ->count();
+
         return [
             'datasets' => [
                 [
                     'label' => 'Profile Views',
-                    $data->map(fn (TrendValue $value) => $value->aggregate),
+                    'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ]
             ],
             'labels' => $data->map(fn (TrendValue $value) => $value->date),
