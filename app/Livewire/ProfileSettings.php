@@ -46,7 +46,7 @@ class ProfileSettings extends Component implements HasForms
                             ->default(($user_settings) ? $user_settings['background_effect'] : ''),
                         Select::make('username_effect')
                             ->label('Username Effects')
-                            ->options(['Rainbow Name', 'Red Sparkles'])
+                            ->options(['rainbow-name' => 'Rainbow Name', 'red-sparkles' => 'Red Sparkles'])
                             ->default(($user_settings) ? $user_settings['username_effect'] : '')
                     ]),
                     Section::make([

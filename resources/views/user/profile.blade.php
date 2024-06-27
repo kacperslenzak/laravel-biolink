@@ -22,7 +22,7 @@
     <div class="wrapper">
         <div class="profile position-relative">
             <div class="profile-username">
-                <h1 class="@if($profile_settings->username_glow) username-glow @endif @switch($profile_settings->username_effect) @case(0) rainbow-text @break @case(1) red-sparkles @break @endswitch">{{ $user->name }}</h1>
+                <h1 class="@if($profile_settings->username_glow) username-glow @endif @switch($profile_settings->username_effect) @case('rainbow-name') rainbow-text @break @case('red-sparkles') red-sparkles @break @endswitch">{{ $user->name }}</h1>
             </div>
             <h4 class="text-white-50 font-bold">UID: {{ $user->id }}</h4>
             @isset($profile_settings->description)
