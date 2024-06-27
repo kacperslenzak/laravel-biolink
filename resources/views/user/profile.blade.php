@@ -4,6 +4,20 @@
     {{ $user->name }}
 @endsection
 
+@section('head')
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>@hex419</title>
+    <meta name="description" content="fraud.cool #1 bio link">
+    <meta content="website" property="og:type">
+    <meta content="{{'@'}}{{ $user->name }} | fraud.lol" property="og:title">
+    <meta content="" property="og:description">
+    <meta content="{{'@'}}{{ $user->name }} | fraud.cool" name="author">
+    <meta content="#FFFFFF" name="theme-color">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="{{ url('image/'.$user->name) }}">
+@endsection
+
 @section('body')
     <div class="wrapper">
         <div class="profile position-relative">

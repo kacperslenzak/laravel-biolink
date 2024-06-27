@@ -12,6 +12,8 @@
         <title>{{ config('app.name') }}</title>
     @endif
 
+    @yield('head')
+
     @vite(['resources/sass/app.scss'])
 </head>
 <body>

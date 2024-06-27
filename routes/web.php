@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/{username}', [UserController::class, 'show']);
+
+Route::get('/image/{username}', [\App\Http\Controllers\MetaImageController::class, 'show']);
