@@ -21,7 +21,9 @@
 @section('body')
     <div class="wrapper">
         <div class="profile position-relative">
-            <h1>{{ $user->name }}</h1>
+            <div class="profile-username">
+                <h1 class="@if($profile_settings->username_glow) username-glow @endif @switch($profile_settings->username_effect) @case(0) rainbow-text @break @case(1) red-sparkles @break @endswitch">{{ $user->name }}</h1>
+            </div>
             <h4 class="text-white-50 font-bold">UID: {{ $user->id }}</h4>
             @isset($profile_settings->description)
                 <p class="text-white-50 mt-3">{{ $profile_settings->description }}</p>
@@ -40,4 +42,16 @@
 
         </div>
     </div>
+
+    <style>
+        .profile {
+            background-color: rgba(27, 27, 27, {{ $profile_settings->profile_opacity }}%) !important;
+        }
+
+        @if($profile_settings->badge_glow)
+        .wrapper .profile i {
+            text-shadow: 0 0 16.5px #fff;
+        }
+        @endif
+    </style>
 @endsection

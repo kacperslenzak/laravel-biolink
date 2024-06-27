@@ -51,8 +51,12 @@ class ProfileSettings extends Component implements HasForms
                     ]),
                     Section::make([
                         TextInput::make('profile_opacity')
-                        ->default(($user_settings) ? $user_settings['profile_opacity'] : ''),
+                        ->label('Profile opacity (%)')
+                        ->default(($user_settings) ? $user_settings['profile_opacity'] : '')
+                        ->maxLength(3)
+                        ->minLength(1),
                         TextInput::make('profile_blur')
+                        ->label('Profile Blur (px)')
                         ->default(($user_settings) ? $user_settings['profile_blur'] : ''),
                         Toggle::make('username_glow')
                         ->default(($user_settings) ? $user_settings['username_glow'] : ''),
